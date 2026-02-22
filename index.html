@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantush Kumar | Software Development Engineer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+
+        body {
+            background:#020617;
+            color:#e2e8f0;
+            scroll-behavior:smooth;
+        }
+
+        /* Animated Background */
+        body::before{
+            content:"";
+            position:fixed;
+            width:100%;
+            height:100%;
+            background: radial-gradient(circle at 20% 20%, rgba(37,99,235,0.25), transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(124,58,237,0.25), transparent 40%);
+            z-index:-1;
+        }
+
+        header {
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:40px;
+        }
+
+        .profile-img {
+            width:180px;
+            height:180px;
+            border-radius:50%;
+            border:4px solid #2563eb;
+            box-shadow:0 0 40px rgba(37,99,235,0.6);
+            object-fit:cover;
+            margin-bottom:25px;
+            animation:float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,100% { transform:translateY(0); }
+            50% { transform:translateY(-15px); }
+        }
+
+        header h1 { font-size:54px; font-weight:700; }
+
+        .typing { margin-top:15px; font-size:22px; color:#60a5fa; border-right:3px solid white; white-space:nowrap; overflow:hidden; }
+
+        nav {
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            padding:18px;
+            background:rgba(2,6,23,0.9);
+            -webkit-backdrop-filter:blur(10px);
+            backdrop-filter:blur(10px);
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        nav a { color:#e2e8f0; text-decoration:none; font-weight:500; transition:0.3s; }
+        nav a:hover { color:#60a5fa; }
+
+        section {
+            max-width:1200px;
+            margin:auto;
+            padding:90px 25px;
+            opacity:0;
+            transform:translateY(60px);
+            transition:1s ease;
+        }
+
+        section.show { opacity:1; transform:translateY(0); }
+
+        h2 { font-size:38px; margin-bottom:30px; color:#60a5fa; }
+
+        .card {
+            background:rgba(2,6,23,0.7);
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+            gap:15px;
+        }
+
+        .skill-box {
+            background:#020617;
+            padding:15px;
+            border-radius:14px;
+            text-align:center;
+            transition:0.4s;
+            border:1px solid #1e293b;
+        }
+
+        .skill-box:hover {
+            transform:translateY(-8px) scale(1.05);
+            border-color:#2563eb;
+            box-shadow:0 15px 40px rgba(37,99,235,0.5);
+        }
+
+        /* Projects */
+        .projects {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
+        }
+
+        .project-card {
+            background:#020617;
+            padding:25px;
+            border-radius:18px;
+            transition:0.4s;
+            border:1px solid #1e293b;
+        }
+
+        .project-card:hover {
+            transform:translateY(-12px);
+            box-shadow:0 20px 50px rgba(0,0,0,0.8);
+            border-color:#2563eb;
+        }
+
+        footer {
+            text-align:center;
+            padding:40px;
+            background:#020617;
+            margin-top:50px;
+        }
+
+        @media(max-width:768px){
+            header h1{font-size:38px;}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Replace profile.jpg with your real image -->
+    <img src="https://image2url.com/images/1765478821804-81b69e8a-f2d8-4079-8e43-05878af13733.jpg" alt="Fantush Kumar" class="profile-img">
+    <h1>Fantush Kumar</h1>
+    <p class="typing" id="typing-text"></p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="project-card">
+        <p>
+            I am an aspiring Software Development Engineer specializing in Java backend development, scalable system design, and problem solving. I enjoy building high-performance applications and continuously learning modern technologies.
+        </p>
+    </div>
+</section>
+<section id="work">
+    <h2>Work Experience</h2>
+
+    <div class="card timeline">
+
+        <div class="project-card">
+            <div class="job-title">Data Associate</div>
+            <div class="company">Flamingo Digital</div>
+            <div class="skills-grid">Drupal | WordPress | Shopify | CMS</div>
+            <div class="date">Aug 2025 — Present | Gurgaon, Haryana, India</div>
+            <p>Working on data processing, database handling, and system data operations. Supporting business workflows and maintaining data accuracy.</p>
+        </div>
+
+    </div>
+</section>
+<section id="skills">
+    <h2>Professional Skills</h2>
+
+    <div class="project-card">
+        <h3 style="margin-bottom:15px;">Programming Languages</h3>
+        <div class="skills-grid">
+            <div class="skill-box">JavaScript</div>
+            <div class="skill-box">Java</div>
+            <div class="skill-box">C++</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">C#</div>
+        </div>
+    </div>
+
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="project-card">
+        <div class="skills-grid">
+            <div class="skill-box">HTML</div>
+            <div class="skill-box">CSS</div>
+            <div class="skill-box">MySQL</div>
+            <div class="skill-box">AWS</div>
+            <div class="skill-box">Linux</div>
+            <div class="skill-box">Git & GitHub</div>
+            <div class="skill-box">REST APIs</div>
+            <div class="skill-box">System Design</div>
+            <div class="skill-box">DSA</div>
+            <div class="skill-box">Problem Solving</div>
+            <div class="skill-box">Computer Networks</div>
+
+        </div>
+    </div>
+</section>
+<div class="project-card">
+<!-- Certification Section with PDFs Start -->
+<section id="certifications" style="padding: 40px 0; background-color: #82adb6;">
+  <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: 2em; margin-bottom: 20px;">Certifications</h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+<div class="project-card">
+      <!-- Certificate 1 -->
+      <div style="background-color: #052f42; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 250px;">
+        <h3 style="font-size: 1.2em; margin-bottom: 10px;">AWS Certified Solutions Architect</h3>
+        <p style="font-size: 0.9em; color: #555;">Amazon Web Services – 2025</p>
+        <a href="https://image2url.com/r2/default/documents/1771755619863-64a322a1-cf30-405b-bf1e-c06264919e0e.pdf" target="_blank" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #007BFF; color: #fff; border-radius: 5px; text-decoration: none;">View PDF</a>
+      </div>
+      </div>
+<div class="project-card">
+      <!-- Certificate 2 -->
+      <div style="background-color: #34166b; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); width: 250px;">
+        <h3 style="font-size: 1.2em; margin-bottom: 10px;">Java Programming Professional</h3>
+        <p style="font-size: 0.9em; color: #555;">Oracle – 2024</p>
+        <a href="https://image2url.com/r2/default/documents/1771755519707-bdb69f6f-6487-4bfd-af40-75370e679799.pdf" target="_blank" style="display: inline-block; margin-top: 10px; padding: 8px 12px; background-color: #007BFF; color: #fff; border-radius: 5px; text-decoration: none;">View PDF</a>
+      </div>
+</div>
+    </div>
+  </div>
+</section>
+<!-- Certification Section with PDFs End -->
+</div>
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="project-card">
+            <h3>Student Management System</h3>
+            <p>Java-based application for managing student academic records.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>Modern responsive personal portfolio with advanced UI animations.</p>
+        </div>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <div class="project-card">
+        <p><strong>Bachelor of Computer Applications</strong></p>
+        <p>Uttaranchal University</p>
+        <p>Currently in 5th Semester</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="project-card">
+        <p>Email: fantusharyanfkb@gmail.com</p>
+        <p>Phone: +91-7488405536</p>
+        <p>LinkedIn: <a href ="https://www.linkedin.com/in/fantush-kumar-550045249" target="_blank" rel="noopener noreferrer">Fantush Kumar</a></p>
+        <p>GitHub: <a href="https://github.com/fantushkumar" target="_blank" rel="noopener noreferrer">Fantush Kumar</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Fantush Kumar | All Rights Reserved</p>
+</footer>
+
+<script>
+
+// Typing Effect
+const text = "Java Developer | Software Development Engineer";
+let i = 0;
+function typing(){
+    if(i < text.length){
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 60);
+    }
+}
+typing();
+
+// Scroll Animation
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", ()=>{
+    sections.forEach(sec=>{
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){ sec.classList.add("show"); }
+    });
+});
+
+</script>
+
+
+
